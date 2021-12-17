@@ -34,7 +34,7 @@ CREATE TABLE `book_author` (
 );
 
 CREATE TABLE `publisher` (
-    `id` INT NOT NULL,
+    `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(100) NOT NULL,
     PRIMARY KEY (`id`)
 );
