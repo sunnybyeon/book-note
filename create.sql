@@ -1,16 +1,8 @@
 CREATE TABLE `memo` (
     `id` INT NOT NULL AUTO_INCREMENT,
-    `user_id` INT NOT NULL,
     `book_id` INT NOT NULL,
     `content` TEXT NOT NULL,
     `created` DATE NOT NULL,
-    PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `user` (
-    `id` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(100) NOT NULL,
-    `profile` VARCHAR(2000) NULL,
     PRIMARY KEY (`id`)
 );
 
