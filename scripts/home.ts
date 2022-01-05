@@ -21,10 +21,8 @@ document.getElementById("book").addEventListener("input", function () {
     };
     if (book.selectedOpt.length > 0) {
         author.listInput.value = author.name;
+        author.listInput.dispatchEvent(new Event("input"));
         publisher.listInput.value = publisher.name;
-    } else {
-        author.listInput.value = "";
-        publisher.listInput.value = "";
     }
 });
 
