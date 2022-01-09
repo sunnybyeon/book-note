@@ -66,7 +66,7 @@ serve(
             ]);
             const bookId = await bndb.insertBook(book, authorIds, publisherId);
             await bndb.insertMemo(bookId, content);
-            return new Response();
+            return new Response(null, { status: 201 });
         } else if (/^\/(styles|scripts|images)\/.+$/.test(reqUrl.pathname)) {
             try {
                 const filePath = await Deno.realPath(

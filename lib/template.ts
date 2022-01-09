@@ -1,4 +1,4 @@
-import type { ExecuteResult } from "https://deno.land/x/mysql/src/connection.ts";
+import type { ExecuteResult } from "https://deno.land/x/mysql/mod.ts";
 
 export const layouts = {
     html: (
