@@ -68,6 +68,15 @@ serve(
             await bndb.insertMemo(bookId, content);
             return new Response(null, { status: 201 });
         } else if (/^\/(styles|scripts|images)\/.+$/.test(reqUrl.pathname)) {
+            if (reqUrl.pathname.includes("../")) {
+                return new Response(
+                    template.layouts.html(
+                        "Error",
+                        `<h1>403 Forbidden</h1><a href="/">Go Home</a>`
+                    ),
+                    { headers: { "content-type": "text/html" }, status: 403 }
+                );
+            }
             try {
                 const filePath = await Deno.realPath(
                     reqUrl.pathname.substring(1)
