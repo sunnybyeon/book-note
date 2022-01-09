@@ -6,8 +6,10 @@ import {
 } from "https://deno.land/std/streams/mod.ts";
 import { extname } from "https://deno.land/std/path/mod.ts";
 
+await import("https://deno.land/x/dotenv/load.ts");
+
 import * as template from "./lib/template.ts";
-import { db, bndb } from "./lib/bndb.ts";
+const { db, bndb } = await import("./lib/bndb.ts");
 
 const decoder = new TextDecoder();
 
